@@ -156,6 +156,38 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 .mdb{padding:18px 20px 24px}.mdb h3{margin:6px 0 10px;font-size:20px;line-height:1.3}
 .x{position:sticky;top:8px;float:right;margin:8px 8px 0 0;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:24px;line-height:1;cursor:pointer}
 @media(prefers-reduced-motion:reduce){*,*::before{animation:none!important}.js .rv{opacity:1;transform:none;transition:none}}
+
+/* ===== perapian profil + tombol cari ===== */
+.dem{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:14px}
+@media(min-width:760px){.dem{grid-template-columns:repeat(4,1fr)}}
+.dem div{border-left:4px solid var(--gold);padding:6px 14px;background:var(--bg);border-radius:0 10px 10px 0}
+.dem b{display:block;font-size:26px;line-height:1.2}.dem small{color:var(--muted)}
+.vm{display:grid;gap:18px;align-items:start}
+@media(min-width:760px){.vm{grid-template-columns:1fr 1.4fr}}
+.vmc{border-left:4px solid var(--gold);padding:2px 0 2px 16px}
+.vmc h3{margin:0 0 10px}.vmc p{margin:0}
+.ml{list-style:none;margin:0;padding:0;counter-reset:n}
+.ml li{position:relative;padding-left:42px;margin-bottom:12px;counter-increment:n}
+.ml li::before{content:counter(n);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-weight:700;font-size:13px}
+.pot{display:grid;gap:18px;align-items:start;margin-top:14px}
+@media(min-width:760px){.pot{grid-template-columns:1fr 1fr}}
+.pg{background:var(--bg);border-radius:12px;padding:14px 16px;border-top:4px solid var(--gold)}
+.pg h4{margin:0 0 10px;font-size:16px}
+.pl{list-style:none;margin:0;padding:0}
+.pl li{position:relative;padding-left:18px;margin-bottom:12px}
+.pl li:last-child{margin-bottom:0}
+.pl li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--green)}
+nav{display:flex;align-items:center;gap:8px}
+#srchBtn{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;width:40px;height:38px;display:grid;place-items:center;cursor:pointer;padding:0}
+#srchBtn:hover{background:rgba(255,255,255,.14)}
+@media(min-width:1000px){#srchBtn{order:2;margin-left:6px}}
+#sr{margin:7vh auto auto;width:min(560px,92vw)}
+.srb{padding:50px 16px 16px}
+#sq{font-size:17px}
+#sres{margin-top:12px;display:grid;gap:8px}
+.sri{display:grid;gap:2px;text-align:left;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+.sri:hover,.sri:focus-visible{border-color:var(--green)}
+.sri span{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -176,6 +208,7 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
    <span>Kelurahan Kampung Gedong<small>Kec. Pasar Rebo, Jakarta Timur</small></span>
   </a>
   <nav id="nav">
+   <button id="srchBtn" type="button" aria-label="Cari di website" title="Cari"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/></svg></button>
    <button id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
    <ul id="menu">
     <li><a href="#profil">Profil</a></li><li><a href="#struktur">Struktur</a></li><li><a href="#layanan">Layanan</a></li><li><a href="#berita">Berita</a></li><li><a href="#infografis">Infografis</a></li><li><a href="#peta">Peta</a></li><li><a href="#pengaduan">Pengaduan</a></li><li><a href="#kontak">Kontak</a></li>
@@ -219,19 +252,29 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
  <div class="card pane on" id="p-sejarah"><h3 style="margin-top:0">Sejarah singkat Kampung Gedong</h3><p>Gedong adalah kata dalam dialek Betawi untuk menyebut ‘gedung’. Kelurahan Gedong mendapatkan namanya karena adanya gedung paling megah dalam sejarah tanah parikelir Ommelanden, atau kawasan luar tembok kota Batavia, bernama Groneveld Tandjoeng Oost – sebuah rumah pendesaan (landhuis) yang dibangun Pieter van den Velde, pemilik pertamaTandjoeng Oost1. Sumber: Buku Toponimi Jakarta Timur, Sudin Kebudayaan Jakarta Timur, 2023.</p></div>
  <div class="card pane" id="p-geografi"><h3 style="margin-top:0">Letak dan batas wilayah</h3><p>Kelurahan Kampung Gedong berada di Kecamatan Pasar Rebo, Kota Administrasi Jakarta Timur.</p>
   <div class="bts"><div><small>Utara</small>Batu Ampar</div><div><small>Selatan</small>Cijantung</div><div><small>Timur</small>Pasar Minggu</div><div><small>Barat</small>Ciracas</div></div></div>
- <div class="card pane" id="p-demografi"><h3 style="margin-top:0">Kependudukan</h3><p>Kelurahan Gedong memiliki Rukun Warga 12, Rukun Tetangga 117, dengan jumlah Kartu Keluarga 11242, dan jumlah penduduk sekitar : 42.303 jiwa.</p></div>
- <div class="card pane" id="p-visi"><h3 style="margin-top:0">Visi</h3><p>Terwujudnya pelayanan informasi yang transparan dan akuntabel untuk memenuhi hak pemohon informasi sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</p><h3>Misi</h3><p>1. Meningkatkan pengelolaan dan pelayanan informasi yang berkualitas, benar dan bertanggung jawab. 2.Membangun dan mengembangkan sistem penyediaan serta layanan informasi yang andal.  3. Meningkatkan kompetensi dan kualitas SDM pelayanan informasi.  4. Mewujudkan keterbukaan informasi di Kota Administrasi Jakarta Timur dengan proses yang cepat,tepat,mudah,dan sederhana.</p></div>
- <div class="card pane" id="p-potensi"><h3 style="margin-top:0">Potensi wilayah</h3><p>Kelurahan Gedong (sering disebut Kampung Gedong) di Kecamatan Pasar Rebo, Jakarta Timur, memiliki potensi utama di bidang UMKM dan ekonomi kreatif warga, ruang publik dan penghijauan kota, serta sejarah dan budaya Betawi/Condet. 
-Potensi Ekonomi & UMKM
-
-• Pelaku Usaha Rumahan & Jakpreneur: Aktif menggelar bazar usaha mikro dan program Jakpreneur (seperti di kawasan RPTRA Gedong Trikora) yang melibatkan puluhan pelaku usaha kuliner dan produk lokal.
-• Pemberdayaan Kader PKK: Potensi usaha rumahan ibu-ibu PKK cukup besar dan menjadi sasaran penguatan brand image serta pemasaran digital.
-
-Potensi Ruang Publik, Lingkungan & Sosial
-
-• Ruang Terbuka & RPTRA: Terdapat RPTRA Gedong Trikora (Jl. Gang Hj. Nipah No. 3, RT 04/RW 09) seluas sekitar 2.200 m² untuk aktivitas warga dan anak, serta pengembangan Hutan Kota Gedong dan penataan lahan/taman di sekitar Kali Baru.
-• Gerakan Lingkungan & Komunitas: Didukung kegiatan warga seperti bank sampah (Bank Sampah Cikal dan Bank Sampah ASRI), pembuatan lubang biopori, tanam pangan, dan gotong royong perawatan saluran air.
-• Fasilitas Olahraga & Layanan Publik: Memiliki fasilitas olahraga publik serta layanan kemasyarakatan yang aktif berjalan di tingkat kelurahan.</p></div>
+ <div class="card pane" id="p-demografi"><h3 style="margin-top:0">Kependudukan</h3><p>Kelurahan Gedong memiliki Rukun Warga 12, Rukun Tetangga 117, dengan jumlah Kartu Keluarga 11242, dan jumlah penduduk sekitar : 42.303 jiwa.</p>
+  <div class="dem"><div><b>12</b><small>Rukun Warga (RW)</small></div><div><b>117</b><small>Rukun Tetangga (RT)</small></div><div><b>11.242</b><small>Kartu Keluarga (KK)</small></div><div><b>42.303</b><small>Jiwa (penduduk)</small></div></div></div>
+ <div class="card pane" id="p-visi"><div class="vm">
+  <div class="vmc"><h3>Visi</h3><p>Terwujudnya pelayanan informasi yang transparan dan akuntabel untuk memenuhi hak pemohon informasi sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</p></div>
+  <div class="vmc"><h3>Misi</h3><ol class="ml">
+   <li>Meningkatkan pengelolaan dan pelayanan informasi yang berkualitas, benar dan bertanggung jawab.</li>
+   <li>Membangun dan mengembangkan sistem penyediaan serta layanan informasi yang andal.</li>
+   <li>Meningkatkan kompetensi dan kualitas SDM pelayanan informasi.</li>
+   <li>Mewujudkan keterbukaan informasi di Kota Administrasi Jakarta Timur dengan proses yang cepat, tepat, mudah, dan sederhana.</li>
+  </ol></div>
+ </div></div>
+ <div class="card pane" id="p-potensi"><h3 style="margin-top:0">Potensi wilayah</h3><p>Kelurahan Gedong (sering disebut Kampung Gedong) di Kecamatan Pasar Rebo, Jakarta Timur, memiliki potensi utama di bidang UMKM dan ekonomi kreatif warga, ruang publik dan penghijauan kota, serta sejarah dan budaya Betawi/Condet.</p>
+  <div class="pot">
+   <div class="pg"><h4>Potensi Ekonomi &amp; UMKM</h4><ul class="pl">
+    <li><b>Pelaku Usaha Rumahan &amp; Jakpreneur:</b> Aktif menggelar bazar usaha mikro dan program Jakpreneur (seperti di kawasan RPTRA Gedong Trikora) yang melibatkan puluhan pelaku usaha kuliner dan produk lokal.</li>
+    <li><b>Pemberdayaan Kader PKK:</b> Potensi usaha rumahan ibu-ibu PKK cukup besar dan menjadi sasaran penguatan brand image serta pemasaran digital.</li>
+   </ul></div>
+   <div class="pg"><h4>Potensi Ruang Publik, Lingkungan &amp; Sosial</h4><ul class="pl">
+    <li><b>Ruang Terbuka &amp; RPTRA:</b> Terdapat RPTRA Gedong Trikora (Jl. Gang Hj. Nipah No. 3, RT 04/RW 09) seluas sekitar 2.200 m² untuk aktivitas warga dan anak, serta pengembangan Hutan Kota Gedong dan penataan lahan/taman di sekitar Kali Baru.</li>
+    <li><b>Gerakan Lingkungan &amp; Komunitas:</b> Didukung kegiatan warga seperti bank sampah (Bank Sampah Cikal dan Bank Sampah ASRI), pembuatan lubang biopori, tanam pangan, dan gotong royong perawatan saluran air.</li>
+    <li><b>Fasilitas Olahraga &amp; Layanan Publik:</b> Memiliki fasilitas olahraga publik serta layanan kemasyarakatan yang aktif berjalan di tingkat kelurahan.</li>
+   </ul></div>
+  </div></div>
 </div></section>
 
 <section id="peta"><div class="wrap">
@@ -318,7 +361,7 @@ Potensi Ruang Publik, Lingkungan & Sosial
 
 <section id="pengaduan" class="alt"><div class="wrap">
  <h2>Pengaduan warga</h2>
- <p class="sub">Sampaikan keluhan, saran, atau laporan. Pesan akan dikirim ke petugas lewat WhatsApp.</p>
+ <p class="sub">Sampaikan keluhan, saran, atau laporan anda sekarang. Pesan akan dikirim langsung ke petugas lewat WhatsApp.</p>
  <div class="card"><form id="aduForm">
   <label>Nama<input name="nama" required autocomplete="name"></label>
   <label>RT / RW<input name="rt" placeholder="Contoh: 003 / 005" required></label>
@@ -358,9 +401,10 @@ Potensi Ruang Publik, Lingkungan & Sosial
 </div></footer>
 
 <dialog id="md"><button class="x" type="button" aria-label="Tutup" onclick="this.closest('dialog').close()">&times;</button><div id="mdBody"></div></dialog>
+<dialog id="sr" aria-label="Cari di website"><button class="x" type="button" aria-label="Tutup" onclick="this.closest('dialog').close()">&times;</button><div class="srb"><input id="sq" type="search" placeholder="Cari layanan, berita, profil..." autocomplete="off" aria-label="Kata kunci pencarian"><div id="sres"></div></div></dialog>
 <script>
 var WA="6285739909656"; 
-function wa(t){return "https://wa.me/6285739909656"+WA+"?text="+encodeURIComponent(t)}
+function wa(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
 document.querySelectorAll("[data-wa]").forEach(function(a){a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
 document.getElementById("aduForm").addEventListener("submit",function(e){
  e.preventDefault();var f=e.target;
@@ -422,6 +466,36 @@ if("IntersectionObserver" in window){
  [["section h2",0],["section .sub",0],[".tile",.06],[".stats div",.1],[".num",0],["#profil .card,.two > *",0],[".node",.1],["details",.08],["#pengaduan .card",0]].forEach(function(r){
   document.querySelectorAll(r[0]).forEach(function(el,i){el.classList.add("rv");if(r[1])el.style.transitionDelay=(i%4*r[1])+"s";io.observe(el)})});
 }
+
+/* ---- pencarian ---- */
+var sr=document.getElementById("sr"),sq=document.getElementById("sq"),sres=document.getElementById("sres"),IDX=[];
+function gotoId(id){var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:"smooth",block:"start"})}
+function tx(el){return el.textContent.replace(/\s+/g," ").trim()}
+function buildIdx(){
+ var I=[];
+ document.querySelectorAll("#profil .pane").forEach(function(p){I.push({t:"Profil: "+tx(p.querySelector("h3")),x:tx(p),go:function(){var b=document.querySelector('#profilTabs [data-t="'+p.id.slice(2)+'"]');if(b)b.click();gotoId("profil")}})});
+ document.querySelectorAll("#layanan details").forEach(function(d){I.push({t:"Layanan: "+tx(d.querySelector("summary")),x:tx(d),go:function(){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}})});
+ NEWS.forEach(function(n,i){I.push({t:"Berita: "+n.judul,x:[n.judul,n.ringkas,n.isi,n.kat].join(" "),go:function(){cat="Semua";all=true;renderNews();document.querySelectorAll("#newsTabs .tab").forEach(function(x){x.classList.toggle("on",x.dataset.c==="Semua")});gotoId("berita");setTimeout(function(){var c=document.querySelector('.nc[data-i="'+i+'"]');if(c)c.click()},500)}})});
+ INFO.forEach(function(f){I.push({t:"Infografis: "+f.cap,x:f.cap,go:function(){gotoId("infografis")}})});
+ [["struktur","Struktur organisasi"],["peta","Peta lokasi"],["pengaduan","Pengaduan"],["kontak","Kontak dan nomor penting"]].forEach(function(a){var e=document.getElementById(a[0]);if(e)I.push({t:a[1],x:tx(e),go:function(){gotoId(a[0])}})});
+ return I}
+function doSearch(){
+ var q=sq.value.trim().toLowerCase();sres.textContent="";if(!q)return;
+ var ws=q.split(/\s+/);
+ var R=IDX.filter(function(e){var h=(e.t+" "+e.x).toLowerCase();return ws.every(function(w){return h.indexOf(w)>-1})}).slice(0,8);
+ if(!R.length){var p=document.createElement("p");p.className="note";p.textContent="Tidak ada hasil untuk \u201c"+sq.value.trim()+"\u201d.";sres.appendChild(p);return}
+ R.forEach(function(e){
+  var b=document.createElement("button");b.type="button";b.className="sri";
+  var t=document.createElement("b");t.textContent=e.t;
+  var s=document.createElement("span"),i=e.x.toLowerCase().indexOf(ws[0]),a=Math.max(0,i-40);
+  s.textContent=(a>0?"\u2026":"")+e.x.slice(a,a+120)+"\u2026";
+  b.appendChild(t);b.appendChild(s);
+  b.addEventListener("click",function(){sr.close();setTimeout(e.go,60)});
+  sres.appendChild(b)})}
+document.getElementById("srchBtn").addEventListener("click",function(){IDX=buildIdx();sq.value="";sres.textContent="";sr.showModal();sq.focus()});
+sq.addEventListener("input",doSearch);
+sq.addEventListener("keydown",function(e){if(e.key==="Enter"){var f=sres.querySelector(".sri");if(f)f.click()}});
+sr.addEventListener("click",function(e){if(e.target===sr)sr.close()});
 </script>
 </body>
 </html>
