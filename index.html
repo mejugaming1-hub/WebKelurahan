@@ -3,394 +3,499 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Undangan Pernikahan Asti &amp; Ryno</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Italianno&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Kelurahan Kampung Gedong – Profil dan Layanan</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f7f3ec;--bg2:#ece5d8;--card:#fffdf9;--ink:#26332e;--muted:#6b756f;
-  --green:#1f3a34;--gold:#a8844a;--blush:#e8c8c0;--on-green:#f7f3ec;--line:#d9cfbc;
-  --serif:'Cormorant Garamond',Georgia,serif;--script:'Italianno','Snell Roundhand',cursive;--sans:'Jost',system-ui,sans-serif;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#121c19;--bg2:#18251f;--card:#1d2c27;--ink:#efe8da;--muted:#a3aea8;--green:#0c1512;--gold:#d2ad6e;--blush:#c9a299;--line:#34443d}}
-:root[data-theme="dark"]{--bg:#121c19;--bg2:#18251f;--card:#1d2c27;--ink:#efe8da;--muted:#a3aea8;--green:#0c1512;--gold:#d2ad6e;--blush:#c9a299;--line:#34443d}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--sans);overflow-x:hidden}
-body.lock{overflow:hidden;height:100vh}
-img{max-width:100%;display:block}
-section{padding:72px 24px;max-width:560px;margin:auto;text-align:center}
-h2{font:italic 400 38px/1.15 var(--serif);color:var(--gold);margin-bottom:12px}
-p.sub{color:var(--muted);font-weight:300;margin-bottom:28px}
-.script{font-family:var(--script);font-weight:400}
-.btn{display:inline-block;border:1px solid var(--gold);background:var(--gold);color:#fff;font:500 15px var(--sans);padding:12px 28px;border-radius:999px;cursor:pointer;text-decoration:none}
-.btn.ghost{background:transparent;color:var(--gold)}
-.btn:focus-visible,input:focus-visible,.g img:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+:root{--bg:#f5f7f3;--surface:#fff;--ink:#17261f;--muted:#5a6b63;--green:#1d5c47;--green-d:#123d2e;--gold:#e9a820;--red:#c0392b;--line:#dbe3dd;--on-green:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a15;--surface:#172720;--ink:#e8f0ea;--muted:#9fb1a7;--green:#58b894;--line:#2a3d34;--on-green:#0f1a15}}
+:root[data-theme="dark"]{--bg:#0f1a15;--surface:#172720;--ink:#e8f0ea;--muted:#9fb1a7;--green:#58b894;--line:#2a3d34;--on-green:#0f1a15}
+html{height:auto;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 'Plus Jakarta Sans',system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--green-d,#123d2e);z-index:30}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#123d2e;color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;line-height:1.15;font-size:15px}
+.logo{width:42px;height:42px;flex:none;border-radius:50%;border:2px dashed rgba(255,255,255,.5);display:grid;place-items:center;overflow:hidden}
+.logo:has(img){border:0}
+.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.brand small{display:block;font-weight:500;font-size:11px;opacity:.75}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:4px}
+nav a{display:block;padding:8px 10px;text-decoration:none;font-size:14px;font-weight:500;border-radius:8px}
+nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.14)}
+#menuBtn{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:8px 12px;font:inherit;font-weight:700;cursor:pointer}
+nav.open ul{display:block;position:absolute;left:0;right:0;top:60px;background:#123d2e;padding:8px 18px 16px}
+@media(min-width:1000px){#menuBtn{display:none}nav ul{display:flex}}
+.hero{position:relative;overflow:hidden;background:#123d2e;color:#fff;padding:56px 0 52px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(18,61,46,.74),rgba(18,61,46,.88)),url(header.jpg) center/cover no-repeat;animation:kb 20s ease-in-out infinite alternate}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(30px,8vw,56px);line-height:1.08;margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:540px;margin:0 0 22px;opacity:.9}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:700}
+.btn.gold{background:var(--gold);color:#2a1e00}
+.btn.line{border:1.5px solid rgba(255,255,255,.6);color:#fff;margin-left:6px}
+.btn.green{background:var(--green);color:var(--on-green)}
+section{padding:44px 0}
+h2{font-size:clamp(22px,5vw,30px);margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+.quick{padding-top:0}
+.grid{display:grid;gap:0 14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+.ic,.ics{fill:none;stroke:var(--green);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.tile{position:relative;background:var(--surface);border-radius:12px;margin-top:38px;padding:40px 8px 18px;text-decoration:none;text-align:center;font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);box-shadow:0 2px 8px rgba(0,0,0,.09);display:block}
+.tile .ic{position:absolute;top:-30px;left:50%;margin-left:-32px;width:64px;height:64px}
+.tile:hover,.tile:focus-visible{color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.16)}
+.ics{width:26px;height:26px;flex:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-top:16px}
+@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats div{border-left:4px solid var(--gold);padding:4px 12px}
+.stats b{display:block;font-size:22px}
+.stats small{color:var(--muted)}
+.map{width:100%;height:340px;border:0;border-radius:14px;background:var(--line)}
+.two{display:grid;gap:18px}
+@media(min-width:800px){.two{grid-template-columns:1.4fr 1fr}}
+.org{display:flex;flex-direction:column;align-items:center;gap:0}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 16px;text-align:center;min-width:200px}
+.node b{display:block}.node small{color:var(--muted)}
+.node.top{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.node.top small{color:inherit;opacity:.85}
+.stem{width:2px;height:20px;background:var(--green)}
+.row{display:grid;gap:10px;grid-template-columns:1fr;width:100%;border-top:2px solid var(--green);padding-top:20px;margin-top:0}
+@media(min-width:700px){.row{grid-template-columns:repeat(3,1fr)}}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-left:auto;font-size:22px;color:var(--green)}
+details[open] summary::after{content:"–"}
+details .body{padding:0 16px 16px}
+details ul{padding-left:20px;margin:6px 0 12px}
+details h4{margin:10px 0 2px;font-size:14px;color:var(--muted)}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.news{display:grid;gap:12px}
+@media(min-width:700px){.news{grid-template-columns:repeat(3,1fr)}}
+.news article{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}
+.news .ph{height:8px;background:var(--gold)}
+.news .in{padding:14px}
+.news time{font-size:12px;color:var(--muted)}
+.news h3{margin:4px 0;font-size:16px;line-height:1.3}
+.news p{margin:0;font-size:14px;color:var(--muted)}
+form{display:grid;gap:12px}
+label{font-weight:700;font-size:14px;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus,summary:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.note{font-size:13px;color:var(--muted)}
+footer{background:#0c2a20;color:#e8f0ea;padding:40px 0 24px;font-size:14px}
+footer h3{margin:0 0 10px;font-size:16px;color:var(--gold)}
+footer .cols{display:grid;gap:26px}
+@media(min-width:800px){footer .cols{grid-template-columns:repeat(4,1fr)}}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer .copy{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);opacity:.75;font-size:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Cover */
-#cover{position:fixed;inset:0;z-index:50;background:radial-gradient(120% 90% at 50% 0%,#2c5249 0,var(--green) 62%);color:var(--on-green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;transition:transform 1s cubic-bezier(.7,0,.2,1)}
-#cover.open{transform:translateY(-100%)}
-#cover .arch{position:absolute;inset:auto 0 0 0;height:46%;pointer-events:none;opacity:.14}
-#cover small{font-weight:300;letter-spacing:.04em;opacity:.85}
-#cover .names{font:400 76px/1 var(--script);margin:14px 0 4px;color:#f0dcb3}
-#cover .names i{display:block;font-size:44px;opacity:.8}
-.to{margin:30px 0 14px;width:100%;max-width:320px}
-.to label{font-size:13px;opacity:.8;display:block;margin-bottom:6px}
-.to input{width:100%;text-align:center;background:rgba(255,255,255,.08);border:1px solid rgba(240,220,179,.5);color:#fff;border-radius:12px;padding:12px;font:500 18px var(--serif)}
-.to input::placeholder{color:rgba(255,255,255,.45)}
+/* ===== animasi dan komponen baru ===== */
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+@keyframes pop{from{opacity:0;transform:scale(.94)}}
+@keyframes pin{from{opacity:0;transform:translateY(10px)}}
+.hin{display:grid;gap:28px}
+@media(min-width:860px){.hin{grid-template-columns:1.3fr 1fr;align-items:center}}
+.a1{animation:up .8s .1s both}.a2{animation:up .8s .3s both}.a3{animation:up .8s .5s both}.a4{animation:up .9s .4s both}
+.leader{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:22px 18px;text-align:center;backdrop-filter:blur(6px)}
+.leader h2{color:#fff;font-size:20px;margin:0}.leader h2::after{display:none}
+.leader p{margin:2px 0 14px;font-size:14px;opacity:.85}
+.foto{width:132px;height:132px;border-radius:50%;margin:0 auto 12px;border:3px dashed rgba(255,255,255,.6);overflow:hidden;display:grid;place-items:center;font-size:12px;color:rgba(255,255,255,.7)}
+.foto::before{content:"Foto lurah"}.foto:has(img){border:3px solid var(--gold)}.foto:has(img)::before{display:none}
+.foto img{width:100%;height:100%;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips a{border:1.5px solid rgba(255,255,255,.6);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;text-decoration:none;transition:background .2s,color .2s}
+.chips a:hover{background:var(--gold);border-color:var(--gold);color:#2a1e00}
+h2::after{content:"";display:block;width:64px;height:3px;background:var(--gold);margin-top:8px;transition:width .9s .2s}
+h2.rv:not(.in)::after{width:0}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 8px}
+.tab{border:1.5px solid transparent;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 16px;border-radius:99px;cursor:pointer;color:var(--ink);white-space:nowrap;transition:border-color .2s,color .2s}
+.tab:hover{color:var(--green)}.tab.on{border-color:var(--gold);color:var(--gold)}
+.pane{display:none}.pane.on{display:block;animation:pin .5s ease}
+.bts{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-top:12px}
+.bts div{border-left:4px solid var(--gold);padding:2px 12px}.bts small{color:var(--muted);display:block}
+.nhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:20px}
+.link{margin-left:auto;background:none;border:0;font:inherit;font-weight:700;color:var(--green);cursor:pointer;text-decoration:underline}
+.nlist{display:grid;gap:18px}
+@media(min-width:700px){.nlist{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.nlist{grid-template-columns:repeat(3,1fr)}}
+.nc{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:0;overflow:hidden;cursor:pointer;animation:up .55s both;animation-delay:calc(var(--i)*70ms);transition:transform .25s,box-shadow .25s}
+.nc:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.im{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,var(--green),#123d2e);display:grid;place-items:center}
+.im::before{content:"Tambah foto atau video";color:rgba(255,255,255,.65);font-size:13px}
+.im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.nc:hover .im img{transform:scale(1.07)}
+.pill{position:absolute;top:14px;right:14px;z-index:2;background:var(--gold);color:#2a1e00;border-radius:99px;padding:4px 16px;font-size:13px;font-weight:700}
+.play{position:absolute;inset:0;z-index:1;display:grid;place-items:center}
+.play i{width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.55);position:relative;transition:transform .25s}
+.play i::after{content:"";position:absolute;left:23px;top:17px;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+.nc:hover .play i{transform:scale(1.15)}
+.nb{padding:16px 18px 20px}.meta{font-size:12px;color:var(--muted)}
+.nb h3{margin:8px 0;font-size:18px;line-height:1.35}
+.nb p{margin:0;font-size:14px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.info{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ig{border:0;padding:0;background:var(--line);border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;position:relative;font:inherit;color:var(--muted);display:grid;place-items:center}
+.ig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ig:hover img{transform:scale(1.06)}
+.ig span{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:13px;font-weight:700;text-align:left}
+dialog{width:min(720px,92vw);max-height:90vh;border:0;border-radius:14px;padding:0;background:var(--surface);color:var(--ink);overflow:auto}
+dialog[open]{animation:pop .3s ease}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.big{display:block;width:100%;max-height:60vh;object-fit:contain;background:#000}
+.vid{aspect-ratio:16/9;background:#000}.vid iframe{width:100%;height:100%;border:0}
+.mdb{padding:18px 20px 24px}.mdb h3{margin:6px 0 10px;font-size:20px;line-height:1.3}
+.x{position:sticky;top:8px;float:right;margin:8px 8px 0 0;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important}.js .rv{opacity:1;transform:none;transition:none}}
 
-/* Hero */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:none;background:linear-gradient(180deg,rgba(31,58,52,.55),rgba(31,58,52,.88)),var(--hero) center/cover,var(--green);color:var(--on-green)}
-#hero .names{font:400 84px/.95 var(--script);color:#f0dcb3;margin:18px 0}
-#hero .date{font:italic 400 24px var(--serif)}
-.frame{border:1px solid rgba(240,220,179,.5);padding:36px 22px;border-radius:200px 200px 24px 24px;width:100%;max-width:340px}
-
-/* Quote */
-#quote{background:var(--bg2);max-width:none}
-#quote blockquote{max-width:480px;margin:auto;font:italic 400 21px/1.6 var(--serif)}
-#quote cite{display:block;margin-top:14px;color:var(--gold);font:500 14px var(--sans);font-style:normal}
-
-/* Couple */
-.person{margin-bottom:56px}
-.photo{width:230px;height:300px;margin:0 auto 22px;border-radius:115px 115px 14px 14px;overflow:hidden;border:6px solid var(--card);box-shadow:0 0 0 1px var(--gold),0 14px 30px rgba(0,0,0,.18)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.person .nm{font:400 54px/1.1 var(--script);color:var(--ink)}
-.person .full{font:600 20px var(--serif)}
-.person .par{color:var(--muted);font-weight:300;font-size:15px}
-.amp{font:400 64px var(--script);color:var(--gold);margin:-20px 0 30px}
-
-/* Event */
-#event{background:var(--green);color:var(--on-green);max-width:none}
-#event>div{max-width:512px;margin:auto}
-#event h2{color:#f0dcb3}
-.bigdate{font:italic 400 30px var(--serif);margin:6px 0 24px}
-.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 36px}
-.cd div{border:1px solid rgba(240,220,179,.4);border-radius:14px;padding:14px 0}
-.cd b{display:block;font:400 34px/1 var(--serif);color:#f0dcb3}
-.cd span{font-size:12px;opacity:.8}
-.ev{background:rgba(255,255,255,.06);border-radius:18px;padding:22px;margin-top:14px}
-.ev h3{font:italic 400 28px var(--serif);color:#f0dcb3}
-.ev p{font-weight:300}
-
-/* Location */
-.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);margin:22px 0;aspect-ratio:4/3;background:var(--bg2)}
-.map iframe{width:100%;height:100%;border:0}
-.addr b{font:600 22px var(--serif);display:block}
-
-/* Gift */
-#gift{background:var(--bg2);max-width:none}
-#gift>div{max-width:512px;margin:auto}
-.acc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px;border-left:4px solid var(--gold)}
-.acc .bank{font:600 22px var(--serif)}
-.acc .no{font:500 26px var(--sans);letter-spacing:.04em;margin:4px 0}
-.acc .an{color:var(--muted);font-weight:300;margin-bottom:14px}
-
-/* Gallery */
-.g{columns:2;column-gap:10px}
-.g img{width:100%;margin-bottom:10px;border-radius:12px;cursor:pointer;break-inside:avoid}
-#lb{position:fixed;inset:0;z-index:80;background:rgba(10,16,14,.94);display:none;align-items:center;justify-content:center;padding:20px}
-#lb.on{display:flex}#lb img{max-height:88vh;border-radius:10px}
-
-/* RSVP */
-#rsvp{background:var(--bg2);max-width:none}
-#rsvp>div{max-width:512px;margin:auto}
-.rf{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left}
-.rf label{display:block;font-size:14px;color:var(--muted);margin:12px 0 4px}
-.rf input,.rf select,.rf textarea{width:100%;font:400 16px var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
-.rf textarea{min-height:92px;resize:vertical}
-.rf input:focus-visible,.rf select:focus-visible,.rf textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.rf .btn{width:100%;margin-top:18px}
-#rMsg{text-align:center;margin-top:12px;font-size:14px;color:var(--gold);min-height:20px}
-#wishes{margin-top:26px;max-height:380px;overflow-y:auto;text-align:left;display:flex;flex-direction:column;gap:10px}
-.wish{background:var(--card);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px}
-.wish b{font:600 18px var(--serif)}
-.wish span{font-size:12px;color:var(--gold);margin-left:8px}
-.wish p{font-weight:300;font-size:15px;margin-top:2px;overflow-wrap:anywhere}
-
-/* Closing */
-#close{background:var(--green);color:var(--on-green);max-width:none;padding-bottom:110px}
-#close .script{font-size:54px;color:#f0dcb3}
-#close p{max-width:440px;margin:12px auto;font-weight:300}
-
-/* Music */
-#mus{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--card);color:var(--gold);font-size:20px;display:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-#mus.spin{animation:sp 4s linear infinite}
-@keyframes sp{to{transform:rotate(360deg)}}
-.rv{opacity:0;transform:translateY(22px);transition:.9s}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}#mus.spin{animation:none}#cover{transition:none}html{scroll-behavior:auto}}
-/* Penyesuaian tampilan HP (mobile) */
-html{-webkit-text-size-adjust:100%}
-body{-webkit-tap-highlight-color:transparent}
-body.lock{height:100vh;height:100dvh}
-#hero{min-height:100vh;min-height:100svh}
-#cover{overflow-y:auto}
-#cover .names{font-size:clamp(52px,19vw,76px)}
-#cover .names i{font-size:clamp(32px,11vw,44px)}
-#hero .names{font-size:clamp(56px,21vw,84px)}
-.person .nm{font-size:clamp(44px,14vw,54px)}
-h2{font-size:clamp(32px,10vw,38px)}
-@media (max-width:380px){section{padding:56px 16px}.photo{width:200px;height:262px}.cd{gap:6px}.cd b{font-size:28px}.acc .no{font-size:22px}.frame{padding:30px 16px}}
-@media (max-height:560px) and (orientation:landscape){#cover .names{font-size:46px}.to{margin:12px 0 10px}}
+/* ===== perapian profil + tombol cari ===== */
+.dem{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:14px}
+@media(min-width:760px){.dem{grid-template-columns:repeat(4,1fr)}}
+.dem div{border-left:4px solid var(--gold);padding:6px 14px;background:var(--bg);border-radius:0 10px 10px 0}
+.dem b{display:block;font-size:26px;line-height:1.2}.dem small{color:var(--muted)}
+.vm{display:grid;gap:18px;align-items:start}
+@media(min-width:760px){.vm{grid-template-columns:1fr 1.4fr}}
+.vmc{border-left:4px solid var(--gold);padding:2px 0 2px 16px}
+.vmc h3{margin:0 0 10px}.vmc p{margin:0}
+.ml{list-style:none;margin:0;padding:0;counter-reset:n}
+.ml li{position:relative;padding-left:42px;margin-bottom:12px;counter-increment:n}
+.ml li::before{content:counter(n);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-weight:700;font-size:13px}
+.pot{display:grid;gap:18px;align-items:start;margin-top:14px}
+@media(min-width:760px){.pot{grid-template-columns:1fr 1fr}}
+.pg{background:var(--bg);border-radius:12px;padding:14px 16px;border-top:4px solid var(--gold)}
+.pg h4{margin:0 0 10px;font-size:16px}
+.pl{list-style:none;margin:0;padding:0}
+.pl li{position:relative;padding-left:18px;margin-bottom:12px}
+.pl li:last-child{margin-bottom:0}
+.pl li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--green)}
+nav{display:flex;align-items:center;gap:8px}
+#srchBtn{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;width:40px;height:38px;display:grid;place-items:center;cursor:pointer;padding:0}
+#srchBtn:hover{background:rgba(255,255,255,.14)}
+@media(min-width:1000px){#srchBtn{order:2;margin-left:6px}}
+#sr{margin:7vh auto auto;width:min(560px,92vw)}
+.srb{padding:50px 16px 16px}
+#sq{font-size:17px}
+#sres{margin-top:12px;display:grid;gap:8px}
+.sri{display:grid;gap:2px;text-align:left;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+.sri:hover,.sri:focus-visible{border-color:var(--green)}
+.sri span{font-size:13px;color:var(--muted)}
 </style>
 </head>
-<body class="lock">
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-map" viewBox="0 0 48 48"><path d="M24 45S9 31 9 20a15 15 0 0 1 30 0c0 11-15 25-15 25z"/><circle cx="24" cy="20" r="5.5"/></symbol>
+<symbol id="i-org" viewBox="0 0 48 48"><path d="M24 10L5 21h38L24 10z"/><path d="M10 21v21M19 21v21M29 21v21M38 21v21M4 42h40"/><path d="M24 10V3h7v4h-7"/></symbol>
+<symbol id="i-id" viewBox="0 0 48 48"><rect x="4" y="9" width="40" height="30" rx="4"/><circle cx="16" cy="21" r="4.5"/><path d="M8 33c1-5 4-6 8-6s7 1 8 6M29 20h10M29 28h10"/></symbol>
+<symbol id="i-home" viewBox="0 0 48 48"><path d="M5 23L24 6l19 17M9 20v23h30V20M20 43V30h8v13"/></symbol>
+<symbol id="i-candle" viewBox="0 0 48 48"><rect x="17" y="24" width="14" height="19" rx="2"/><path d="M24 4c5 5 6 9 0 14-6-5-5-9 0-14zM24 24v-4M11 43h26"/></symbol>
+<symbol id="i-aid" viewBox="0 0 48 48"><path d="M24 24C9 14 17 3 24 11c7-8 15 3 0 13z"/><path d="M3 33h8v12H3zM11 35l9-3 12 4c3 1 2 5-1 5H21M32 38l9-6c3-2 5 1 3 3L34 45H11"/></symbol>
+<symbol id="i-news" viewBox="0 0 48 48"><path d="M32 8H8a2 2 0 0 0-2 2v26a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V18H32z"/><path d="M32 8v10h10M12 17h14M12 24h14M12 31h24"/></symbol>
+<symbol id="i-mega" viewBox="0 0 48 48"><path d="M6 19h8l18-9v28l-18-9H6z"/><path d="M38 18c3 3 3 9 0 12M16 29l3 11h6l-3-10"/></symbol>
+</svg>
+<header>
+ <div class="wrap">
+  <a class="brand" href="#beranda">
+   <span class="logo"><img src="LOGO JAKTIM.png" alt="Logo Kelurahan Kampung Gedong" onerror="this.remove()"></span>
+   <span>Kelurahan Kampung Gedong<small>Kec. Pasar Rebo, Jakarta Timur</small></span>
+  </a>
+  <nav id="nav">
+   <button id="srchBtn" type="button" aria-label="Cari di website" title="Cari"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/></svg></button>
+   <button id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+   <ul id="menu">
+    <li><a href="#profil">Profil</a></li><li><a href="#struktur">Struktur</a></li><li><a href="#layanan">Layanan</a></li><li><a href="#berita">Berita</a></li><li><a href="#infografis">Infografis</a></li><li><a href="#peta">Peta</a></li><li><a href="#pengaduan">Pengaduan</a></li><li><a href="#kontak">Kontak</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
 
-<!-- Cover -->
-<div id="cover">
-  <svg class="arch" viewBox="0 0 400 200" preserveAspectRatio="xMidYMax slice" fill="none" stroke="#f0dcb3" stroke-width="1"><path d="M20 200V110a60 60 0 0 1 120 0v90M140 200V90a60 60 0 0 1 120 0v110M260 200V110a60 60 0 0 1 120 0v90"/></svg>
-  <small>Undangan Pernikahan</small>
-  <div class="names" id="cvNames"></div>
-  <div class="to">
-    <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
-    <input id="guest" type="text" placeholder="Ketik Nama Tamu" maxlength="40" aria-label="Nama tamu" style="margin-top:8px">
+<main id="beranda">
+<div class="hero"><div class="wrap hin">
+ <div>
+  <h1 class="a1">Selamat Datang Website Resmi Kelurahan Kampung Gedong.</h1>
+  <p class="a2">Informasi profil, syarat pengurusan surat, berita terbaru, dan pengaduan warga Kelurahan Kampung Gedong dalam satu tempat.</p>
+  <div class="a3"><a class="btn gold" href="#layanan">Lihat layanan</a><a class="btn line" href="#pengaduan">Buat pengaduan</a></div>
+ </div>
+ <aside class="leader a4">
+  <div class="foto"><img src="LURAH KP GEDONG.png" alt="Foto Lurah Kampung Gedong" onerror="this.remove()"></div>
+  <h2>Siti Nurhasanah, SE</h2>
+  <p>Lurah Kampung Gedong</p>
+  <div class="chips"><a href="#profil">Detail</a><a href="#struktur">Perangkat wilayah</a><a href="#infografis">Infografis</a><a href="#layanan">Layanan</a></div>
+ </aside>
+</div></div>
+
+<div class="wrap quick"><div class="grid">
+ <a class="tile" href="#peta"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg>Peta lokasi</a>
+ <a class="tile" href="#struktur"><svg class="ic" aria-hidden="true"><use href="#i-org"/></svg>Struktur organisasi</a>
+ <a class="tile" href="#ktp"><svg class="ic" aria-hidden="true"><use href="#i-id"/></svg>KTP, KK, Akta</a>
+ <a class="tile" href="#domisili"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg>Ket. domisili</a>
+ <a class="tile" href="#kematian"><svg class="ic" aria-hidden="true"><use href="#i-candle"/></svg>Surat kematian</a>
+ <a class="tile" href="#bansos"><svg class="ic" aria-hidden="true"><use href="#i-aid"/></svg>Bansos</a>
+ <a class="tile" href="#berita"><svg class="ic" aria-hidden="true"><use href="#i-news"/></svg>Berita</a>
+ <a class="tile" href="#pengaduan"><svg class="ic" aria-hidden="true"><use href="#i-mega"/></svg>Pengaduan</a>
+</div></div>
+
+<section id="profil" class="alt"><div class="wrap">
+ <h2>Profil kelurahan</h2>
+ <p class="sub">Sejarah, letak wilayah, kependudukan, serta visi dan misi Kelurahan Kampung Gedong.</p>
+ <div class="tabs" id="profilTabs">
+  <button class="tab on" data-t="sejarah">Sejarah</button><button class="tab" data-t="geografi">Geografi</button><button class="tab" data-t="demografi">Demografi</button><button class="tab" data-t="visi">Visi dan misi</button><button class="tab" data-t="potensi">Potensi wilayah</button>
+ </div>
+ <div class="card pane on" id="p-sejarah"><h3 style="margin-top:0">Sejarah singkat Kampung Gedong</h3><p>Gedong adalah kata dalam dialek Betawi untuk menyebut ‘gedung’. Kelurahan Gedong mendapatkan namanya karena adanya gedung paling megah dalam sejarah tanah parikelir Ommelanden, atau kawasan luar tembok kota Batavia, bernama Groneveld Tandjoeng Oost – sebuah rumah pendesaan (landhuis) yang dibangun Pieter van den Velde, pemilik pertamaTandjoeng Oost1. Sumber: Buku Toponimi Jakarta Timur, Sudin Kebudayaan Jakarta Timur, 2023.</p></div>
+ <div class="card pane" id="p-geografi"><h3 style="margin-top:0">Letak dan batas wilayah</h3><p>Kelurahan Kampung Gedong berada di Kecamatan Pasar Rebo, Kota Administrasi Jakarta Timur.</p>
+  <div class="bts"><div><small>Utara</small>Batu Ampar</div><div><small>Selatan</small>Cijantung</div><div><small>Timur</small>Pasar Minggu</div><div><small>Barat</small>Ciracas</div></div></div>
+ <div class="card pane" id="p-demografi"><h3 style="margin-top:0">Kependudukan</h3><p>Kelurahan Gedong memiliki Rukun Warga 12, Rukun Tetangga 117, dengan jumlah Kartu Keluarga 11242, dan jumlah penduduk sekitar : 42.303 jiwa.</p>
+  <div class="dem"><div><b>12</b><small>Rukun Warga (RW)</small></div><div><b>117</b><small>Rukun Tetangga (RT)</small></div><div><b>11.242</b><small>Kartu Keluarga (KK)</small></div><div><b>42.303</b><small>Jiwa (penduduk)</small></div></div></div>
+ <div class="card pane" id="p-visi"><div class="vm">
+  <div class="vmc"><h3>Visi</h3><p>Terwujudnya pelayanan informasi yang transparan dan akuntabel untuk memenuhi hak pemohon informasi sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</p></div>
+  <div class="vmc"><h3>Misi</h3><ol class="ml">
+   <li>Meningkatkan pengelolaan dan pelayanan informasi yang berkualitas, benar dan bertanggung jawab.</li>
+   <li>Membangun dan mengembangkan sistem penyediaan serta layanan informasi yang andal.</li>
+   <li>Meningkatkan kompetensi dan kualitas SDM pelayanan informasi.</li>
+   <li>Mewujudkan keterbukaan informasi di Kota Administrasi Jakarta Timur dengan proses yang cepat, tepat, mudah, dan sederhana.</li>
+  </ol></div>
+ </div></div>
+ <div class="card pane" id="p-potensi"><h3 style="margin-top:0">Potensi wilayah</h3><p>Kelurahan Gedong (sering disebut Kampung Gedong) di Kecamatan Pasar Rebo, Jakarta Timur, memiliki potensi utama di bidang UMKM dan ekonomi kreatif warga, ruang publik dan penghijauan kota, serta sejarah dan budaya Betawi/Condet.</p>
+  <div class="pot">
+   <div class="pg"><h4>Potensi Ekonomi &amp; UMKM</h4><ul class="pl">
+    <li><b>Pelaku Usaha Rumahan &amp; Jakpreneur:</b> Aktif menggelar bazar usaha mikro dan program Jakpreneur (seperti di kawasan RPTRA Gedong Trikora) yang melibatkan puluhan pelaku usaha kuliner dan produk lokal.</li>
+    <li><b>Pemberdayaan Kader PKK:</b> Potensi usaha rumahan ibu-ibu PKK cukup besar dan menjadi sasaran penguatan brand image serta pemasaran digital.</li>
+   </ul></div>
+   <div class="pg"><h4>Potensi Ruang Publik, Lingkungan &amp; Sosial</h4><ul class="pl">
+    <li><b>Ruang Terbuka &amp; RPTRA:</b> Terdapat RPTRA Gedong Trikora (Jl. Gang Hj. Nipah No. 3, RT 04/RW 09) seluas sekitar 2.200 m² untuk aktivitas warga dan anak, serta pengembangan Hutan Kota Gedong dan penataan lahan/taman di sekitar Kali Baru.</li>
+    <li><b>Gerakan Lingkungan &amp; Komunitas:</b> Didukung kegiatan warga seperti bank sampah (Bank Sampah Cikal dan Bank Sampah ASRI), pembuatan lubang biopori, tanam pangan, dan gotong royong perawatan saluran air.</li>
+    <li><b>Fasilitas Olahraga &amp; Layanan Publik:</b> Memiliki fasilitas olahraga publik serta layanan kemasyarakatan yang aktif berjalan di tingkat kelurahan.</li>
+   </ul></div>
+  </div></div>
+</div></section>
+
+<section id="peta"><div class="wrap">
+ <h2>Peta lokasi kelurahan</h2>
+ <p class="sub">Lokasi Terkini Kelurahan Kampung Gedong Jakarta Timur. Ketuk tombol untuk membuka rute dari posisi Anda.</p>
+ <div class="two">
+  <iframe class="map" title="Peta Kelurahan Kampung Gedong" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kelurahan+Kampung+Gedong,+Pasar+Rebo,+Jakarta+Timur&output=embed"></iframe>
+  <div class="card">
+   <h3 style="margin-top:0">Kantor Kelurahan</h3>
+   <p>Kelurahan Kampung Gedong<br>Kecamatan Pasar Rebo<br>Kota Administrasi Jakarta Timur<br>DKI Jakarta</p>
+   <p><b>Jam layanan:</b><br>Senin–Jumat, 08.00–16.00 WIB</p>
+   <a class="btn green" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Kelurahan+Kampung+Gedong,+Pasar+Rebo,+Jakarta+Timur">Petunjuk arah</a>
+   <a class="btn green" style="margin-top:8px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kelurahan+Kampung+Gedong+Pasar+Rebo">Buka di Google Maps</a>
   </div>
-  <button class="btn" id="openBtn">Buka Undangan</button>
-</div>
+ </div>
+ <div class="stats">
+  <div><b class="num" data-count="">42.303</b><small>Jumlah penduduk</small></div><div><b class="num" data-count="">12</b><small>Jumlah RW</small></div><div><b class="num" data-count="">117</b><small>Jumlah RT</small></div><div><b class="num" data-count="" data-suf=" km²"> 2,63  km²</b><small>Luas wilayah</small></div>
+ </div>
+</div></section>
 
-<main>
-  <section id="hero">
-    <div class="frame">
-      <small>Kami mengundang Anda ke pernikahan</small>
-      <div class="names" id="hNames"></div>
-      <div class="date" id="hDate"></div>
-    </div>
-    <p style="margin-top:28px;font-weight:300">Yth. <b id="gName" style="font-weight:500"></b></p>
-  </section>
+<section id="struktur" class="alt"><div class="wrap">
+ <h2>Struktur organisasi</h2>
+ <p class="sub">PEJABAT PENGELOLA INFORMASI DAN DOKUMENTASI (PPID) Kelurahan.</p>
+ <div class="org">
+  <div class="node top"><b>Lurah</b><small>Siti Nurhasanah, SE</small></div>
+  <div class="stem"></div>
+  <div class="node"><b>Sekretaris Kelurahan</b><small>Edy Rusmanto, S.Pd</small></div>
+  <div class="stem"></div>
+  <div class="row">
+   <div class="node"><b>Kasi Pemerintahan</b><small>Fithri Hanafia, S.Si</small></div>
+   <div class="node"><b>Kasi Ekonomi dan Pembangunan</b><small>Iman Aji Fauzy, S.Kom</small></div>
+   <div class="node"><b>Kasi Kesejahteraan Rakyat</b><small>Mientiastien, S.Sos</small></div>
+  </div>
+  <div class="stem"></div>
+  <div class="node"><b>Ketua RW dan Ketua RT</b><small>LMK, PKK, Karang Taruna, Posyandu</small></div>
+ </div>
+</div></section>
 
-  <section id="quote"><div class="rv">
-    <blockquote id="qText"></blockquote><cite id="qSrc"></cite>
-  </div></section>
+<section id="layanan"><div class="wrap">
+ <h2>Layanan administrasi</h2>
+ <p class="sub">Ketuk layanan untuk melihat syarat. Dokumen asli dibawa saat datang ke kantor kelurahan. Syarat dapat berubah, konfirmasi ke petugas.</p>
 
-  <section id="couple">
-    <h2 class="rv">Mempelai</h2>
-    <p class="sub rv" id="intro"></p>
-    <div id="people"></div>
-  </section>
+ <details id="ktp"><summary><svg class="ics" aria-hidden="true"><use href="#i-id"/></svg>Pengurusan KTP, KK, dan Akta</summary><div class="body">
+  <h4>KTP elektronik</h4><ul><li>Surat pengantar RT/RW</li><li>Fotokopi KK</li><li>Sudah berusia 17 tahun atau sudah menikah</li><li>KTP hilang: surat kehilangan dari kepolisian</li></ul>
+  <h4>Kartu Keluarga (KK)</h4><ul><li>Surat pengantar RT/RW</li><li>KK lama (untuk perubahan data)</li><li>Buku nikah atau akta perceraian jika ada perubahan status</li><li>Akta kelahiran untuk penambahan anggota keluarga</li></ul>
+  <h4>Akta kelahiran</h4><ul><li>Surat keterangan lahir dari RS, bidan, atau lurah</li><li>KK dan KTP kedua orang tua</li><li>Buku nikah orang tua</li><li>KTP dua saksi</li></ul>
+  <p class="note">Perekaman dan pencetakan akhir dilakukan di Dukcapil. Kelurahan membantu pengantar dan verifikasi berkas.</p>
+  <a class="btn green" href="#" data-wa="Halo, saya ingin bertanya layanan KTP/KK/Akta.">Tanya petugas via WhatsApp</a>
+ </div></details>
 
-  <section id="event"><div>
-    <h2 class="rv">Hari Bahagia</h2>
-    <div class="bigdate rv" id="bigDate"></div>
-    <div class="cd rv" id="cd"></div>
-    <div id="events"></div>
-    <a class="btn rv" id="cal" style="margin-top:26px" target="_blank" rel="noopener">Simpan di Kalender</a>
-  </div></section>
+ <details id="domisili"><summary><svg class="ics" aria-hidden="true"><use href="#i-home"/></svg>Surat keterangan domisili</summary><div class="body">
+  <ul><li>Surat pengantar RT/RW</li><li>Fotokopi KTP dan KK</li><li>Pas foto 3×4 (2 lembar)</li><li>Surat pernyataan domisili bermaterai</li><li>Warga pendatang: surat keterangan pindah dan kontrak/bukti tempat tinggal</li></ul>
+  <a class="btn green" href="#" data-wa="Halo, saya ingin mengurus surat keterangan domisili.">Tanya petugas via WhatsApp</a>
+ </div></details>
 
-  <section id="loc">
-    <h2 class="rv">Lokasi</h2>
-    <div class="addr rv"><b id="venue"></b><span id="addr" style="color:var(--muted)"></span></div>
-    <div class="map rv"><iframe id="mapFrame" loading="lazy" title="Peta lokasi"></iframe></div>
-    <a class="btn rv" id="mapBtn" target="_blank" rel="noopener">Buka di Google Maps</a>
-  </section>
+ <details id="kematian"><summary><svg class="ics" aria-hidden="true"><use href="#i-candle"/></svg>Surat keterangan kematian</summary><div class="body">
+  <ul><li>Surat keterangan kematian dari RS/puskesmas/dokter, atau surat pengantar RT/RW</li><li>Fotokopi KTP dan KK almarhum/almarhumah</li><li>KTP pelapor dan dua saksi</li><li>Akta kematian diteruskan ke Dukcapil</li></ul>
+  <p class="note">Segera laporkan maksimal 30 hari setelah kejadian.</p>
+  <a class="btn green" href="#" data-wa="Halo, saya ingin melaporkan kematian warga.">Hubungi petugas via WhatsApp</a>
+ </div></details>
 
-  <section id="gift"><div>
-    <h2 class="rv">Hadiah Pernikahan</h2>
-    <p class="sub rv" id="giftText"></p>
-    <div id="accs"></div>
-  </div></section>
+ <details id="bansos"><summary><svg class="ics" aria-hidden="true"><use href="#i-aid"/></svg>Bansos dan bantuan sosial</summary><div class="body">
+  <ul><li>Cek status penerima di <a href="https://cekbansos.kemensos.go.id" target="_blank" rel="noopener">cekbansos.kemensos.go.id</a></li><li>Usulan warga baru melalui RT/RW dan musyawarah kelurahan</li><li>Bawa KTP, KK, dan bukti kondisi ekonomi</li><li>Pendataan masuk DTSEN dan diverifikasi petugas</li></ul>
+  <p class="note">Jenis bantuan: PKH, BPNT, PBI-JK, KJP, dan program daerah lain.</p>
+  <a class="btn green" href="#" data-wa="Halo, saya ingin bertanya tentang usulan bansos.">Tanya petugas via WhatsApp</a>
+ </div></details>
+</div></section>
 
-  <section id="gal">
-    <h2 class="rv">Galeri Kami</h2>
-    <p class="sub rv">Potongan perjalanan sebelum hari ini.</p>
-    <div class="g" id="g"></div>
-  </section>
+<section id="berita" class="alt"><div class="wrap">
+ <h2>Berita wilayah</h2>
+ <p class="sub">Kabar dan kegiatan dari kelurahan. Ketuk berita untuk baca selengkapnya atau memutar video.</p>
+ <div class="nhead">
+  <div class="tabs" id="newsTabs"><button class="tab on" data-c="Semua">Semua</button><button class="tab" data-c="Pemerintahan">Pemerintahan</button><button class="tab" data-c="Perekonomian">Perekonomian</button><button class="tab" data-c="Pembangunan">Pembangunan</button><button class="tab" data-c="Kesejahteraan Masyarakat">Kesejahteraan Masyarakat</button></div>
+  <button class="link" id="showAll" type="button">Tampilkan semua</button>
+ </div>
+ <div class="nlist" id="newsList"></div>
+</div></section>
 
-  <section id="rsvp"><div>
-    <h2 class="rv">RSVP &amp; Ucapan</h2>
-    <p class="sub rv">Mohon konfirmasi kehadiran dan tinggalkan doa terbaik Anda.</p>
-    <form class="rf rv" id="rsvpForm">
-      <label for="rName">Nama</label>
-      <input id="rName" required maxlength="60" autocomplete="name">
-      <label for="rStatus">Kehadiran</label>
-      <select id="rStatus"><option>Hadir</option><option>Tidak Hadir</option><option>Masih Ragu</option></select>
-      <label for="rCount">Jumlah tamu</label>
-      <select id="rCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-      <label for="rText">Ucapan &amp; doa</label>
-      <textarea id="rText" maxlength="400" placeholder="Tulis ucapan untuk kedua mempelai"></textarea>
-      <button class="btn" type="submit" id="rBtn">Kirim</button>
-      <div id="rMsg" role="status"></div>
-    </form>
-    <div id="wishes"></div>
-  </div></section>
+<section id="infografis"><div class="wrap">
+ <h2>Infografis</h2>
+ <p class="sub">Ketuk gambar untuk memperbesar.</p>
+ <div class="info" id="infoList"></div>
+</div></section>
 
-  <section id="close"><div class="rv">
-    <div class="script" id="clNames"></div>
-    <p id="clText"></p>
-    <p style="margin-top:28px;font-size:13px;opacity:.7">Dengan penuh cinta, keluarga besar kedua mempelai</p>
-  </div></section>
+<section id="pengaduan" class="alt"><div class="wrap">
+ <h2>Pengaduan warga</h2>
+ <p class="sub">Sampaikan keluhan, saran, atau laporan anda sekarang. Pesan akan dikirim langsung ke petugas lewat WhatsApp.</p>
+ <div class="card"><form id="aduForm">
+  <label>Nama<input name="nama" required autocomplete="name"></label>
+  <label>RT / RW<input name="rt" placeholder="Contoh: 003 / 005" required></label>
+  <label>Kategori<select name="kat"><option>Infrastruktur (jalan, drainase)</option><option>Kebersihan dan sampah</option><option>Keamanan dan ketertiban</option><option>Pelayanan administrasi</option><option>Bantuan sosial</option><option>Lainnya</option></select></label>
+  <label>Isi pengaduan<textarea name="isi" rows="5" required placeholder="Jelaskan masalah, lokasi, dan waktu kejadian"></textarea></label>
+  <button class="btn green" type="submit">Kirim lewat WhatsApp</button>
+  <p class="note" id="aduMsg" role="status"></p>
+ </form></div>
+</div></section>
 </main>
 
-<div id="lb" role="dialog" aria-label="Foto"><img alt=""></div>
-<button id="mus" aria-label="Putar atau jeda musik">♪</button>
-<iframe id="sc" allow="autoplay" title="Musik" style="position:absolute;width:0;height:0;border:0;visibility:hidden"></iframe>
+<footer id="kontak"><div class="wrap">
+ <div class="cols">
+  <div><h3>Kontak kelurahan</h3><ul>
+   <li>Kantor Kelurahan Kampung Gedong, Kec. Pasar Rebo, Jakarta Timur</li>
+   <li>Telepon: <a href="tel:+628400035">(021) 8400-035</a></li>
+   <li>WhatsApp: <a href="#" data-wa="Halo, saya ingin bertanya kepada Kelurahan Kampung Gedong.">085739909656</a></li>
+   <li>Email: <a href="mailto:kel.kampunggedong@jakarta.go.id">kel.kampunggedong@jakarta.go.id</a></li></ul></div>
+  <div><h3>Nomor penting</h3><ul>
+   <li>Ambulans: <a href="tel:119">119</a></li>
+   <li>Darurat terpadu Jakarta: <a href="tel:112">112</a></li>
+   <li>Pemadam kebakaran: <a href="tel:113">113</a></li>
+   <li>Polisi: <a href="tel:110">110</a></li>
+   <li>Babinsa: <a href="tel:+628093525"> (021) 809-3525</a></li>
+   <li>Babinkamtibmas: <a href="tel:+6281399388201"> 0813-9938-8201</a></li></ul></div>
+  <div><h3>Sosial media</h3><ul>
+   <li><a href="https://www.instagram.com/kantorkelurahangedong?bqrl=MXJ0ZWQ2bndvN2Mwdw==" target="_blank" rel="noopener">Instagram</a></li>
+   <li><a href="https://youtube.com/@kotajakartatimur?si=fKNxw-E7ae8OtHoD" target="_blank" rel="noopener">YouTube</a></li>
+   <li><a href="https://www.tiktok.com/@kelurahan.kampung1?_r=1&_t=ZS-9BW5zK3LsQf" target="_blank" rel="noopener">TikTok</a></li></ul>
+   </div>
+  <div><h3>Jelajahi</h3><ul>
+   <li><a href="https://kemendesa.go.id" target="_blank" rel="noopener">Web Kemendesa</a></li>
+   <li><a href="https://cekdptonline.kpu.go.id" target="_blank" rel="noopener">Cek DPT online</a></li>
+   <li><a href="https://cekbansos.kemensos.go.id" target="_blank" rel="noopener">Cek bansos Kemensos</a></li></ul></div>
+ </div>
+ <div class="copy">© 2026 Kelurahan Kampung Gedong, Kecamatan Pasar Rebo, Jakarta Timur.</div>
+</div></footer>
 
+<dialog id="md"><button class="x" type="button" aria-label="Tutup" onclick="this.closest('dialog').close()">&times;</button><div id="mdBody"></div></dialog>
+<dialog id="sr" aria-label="Cari di website"><button class="x" type="button" aria-label="Tutup" onclick="this.closest('dialog').close()">&times;</button><div class="srb"><input id="sq" type="search" placeholder="Cari layanan, berita, profil..." autocomplete="off" aria-label="Kata kunci pencarian"><div id="sres"></div></div></dialog>
 <script>
-/* ============================================================
-   DATA UNDANGAN — ubah semua isi di bawah ini
-   Foto: isi dengan data URI (data:image/jpeg;base64,...).
-   Kosongkan ("") untuk memakai foto placeholder.
-   (Tautan foto dari internet tidak bisa dimuat di halaman ini.)
-   ============================================================ */
-const C = {
-  groom: { nick:"Ryno", full:"Adelleryno Satrio Anggoro, S.Kom.", photo:"R.jpeg", parents:"Putra dari Bapak Danang & Ibu Ami" },
-  bride: { nick:"Asti", full:"Asti Nafisabila, S.E.", photo:"A.jpeg", parents:"Putri dari Bapak Wahyudi & Ibu Ratni" },
-  hero: "bckgrnd.jpeg",                       // foto latar halaman utama (opsional)
-  intro: "Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan pernikahan putra-putri kami.",
-  quote: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan untukmu agar kamu merasa tenteram kepadanya.",
-  quoteSrc: "QS. Ar-Rum: 21",
-  date: "2027-02-20T09:00:00+07:00",   // tanggal & jam utama (akad)
-  events: [
-    { title:"Akad Nikah", time:"09.00 WIB – 10.00 WIB" },
-    { title:"Resepsi",    time:"11.00 WIB – selesai" }
-  ],
-  venue: "Masjid An-Noor",
-  address: "Jl. RE Martadinata No.60, Cipayung, Kec. Ciputat, Kota Tangerang Selatan, Banten 15411",
-  mapQuery: "Masjid An-noor, Ciputat, Kota Tangerang",  // nama tempat / alamat untuk Google Maps
-  soundcloud: "https://soundcloud.com/munegahachikiresode/about-you-by-the-1975-but-its-sped-up-and-reverbed?si=199e59197b1f45a5b98863c1c3a704f4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",    // tautan lagu SoundCloud
-  giftText: "Doa restu Anda sudah menjadi hadiah terindah. Bila ingin berbagi tanda kasih, dapat melalui rekening berikut.",
-  accounts: [
-    { bank:"BCA",     no:"7655532137",    name:"Adelleryno Satrio Anggoro" },
-    { bank:"BCA", no:"4485479210", name:"Asti Nafisabila" }
-  ],
-  sheetUrl: "https://script.google.com/macros/s/AKfycbwILn7ZT5Fkb-vBaOoSodFYCAsAcqb8kOAMh65BGNFDm7iG1UbzJ_ELCnUUeU0Sm92h/exec",   // tempel URL Web App Google Apps Script di sini (untuk RSVP & ucapan)
-  gallery: ["Fotbar3.jpeg","Fotbar2.jpeg","Fotbar4.jpeg","Fotbar6.jpeg","Fotbar5.jpeg","Fotbar1.jpeg"],   // 6 foto galeri (tambah/kurangi sesuka hati)
-  closing: "Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu."
-};
+var WA="6285739909656"; 
+function wa(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+document.getElementById("aduForm").addEventListener("submit",function(e){
+ e.preventDefault();var f=e.target;
+ var t="PENGADUAN WARGA\nNama: "+f.nama.value+"\nRT/RW: "+f.rt.value+"\nKategori: "+f.kat.value+"\nIsi: "+f.isi.value;
+ window.open(wa(t),"_blank");
+ document.getElementById("aduMsg").textContent="WhatsApp dibuka. Tekan kirim di sana untuk menyampaikan pengaduan.";
+});
+var nav=document.getElementById("nav"),btn=document.getElementById("menuBtn");
+btn.addEventListener("click",function(){var o=nav.classList.toggle("open");btn.setAttribute("aria-expanded",o)});
+document.querySelectorAll("#menu a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");btn.setAttribute("aria-expanded",false)})});
+document.querySelectorAll(".tile").forEach(function(a){a.addEventListener("click",function(){var d=document.querySelector(a.getAttribute("href"));if(d&&d.tagName==="DETAILS")d.open=true})});
 
-/* ---------- Kode di bawah tidak perlu diubah ---------- */
-const $ = s => document.querySelector(s);
-const ph = (t,h,w=400,hh=500) => 'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${hh}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},28%,78%)"/><stop offset="1" stop-color="hsl(${h+30},30%,42%)"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="52%" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="${w/5}" fill="rgba(255,255,255,.85)">${t}</text></svg>`);
-const D = new Date(C.date);
-const hari = D.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'});
-const tgl  = D.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'});
-const names = C.bride.nick+' <i>&amp;</i> '+C.groom.nick;
+var NEWS=[
+ {judul:"Kerja bakti bersama warga RW 05",tgl:"15 November 2026",kat:"Pembangunan",baca:120,tipe:"foto",src:"KERJAsm.jpg",ringkas:"Warga bergotong-royong membersihkan puing-puing yang berserakan.",isi:"Warga bersama perangkat kelurahan membersihkan puing-puing di lingkungan RW 05 agar tidak berserakan dan mengganggu aktivitas warga, selengkapnya. https://share.google/A1ux79CtjSQuCAMOj"},
+ {judul:"Pelayanan KTP-el keliling dibuka",tgl:"10 November 2026",kat:"Pemerintahan",baca:98,tipe:"foto",src:"KTP El.jpg",ringkas:"Layanan perekaman KTP-el wajib membawa KK asli.",isi:"Layanan perekaman KTP-el keliling dibuka di bagian lapang kelurahan. Warga diminta wajib membawa KK asli, selengkapnya. https://share.google/3DNmRvtqq1tNjs1x1"},
+ {judul:"Video: Posyandu lansia bulan November",tgl:"5 November 2026",kat:"Kesejahteraan Masyarakat",baca:75,tipe:"video",src:"POSYANDU.mp4",poster:"Lansia.webp",ringkas:"Pemeriksaan tensi dan gula darah gratis untuk warga lansia.",isi:"Dokumentasi kegiatan Posyandu lansia di daerah sekitar berikut selengkapnya. https://share.google/VSAYL9DDWy9koa86p"},
+ {judul:"Bazar UMKM warga Kampung Gedong",tgl:"28 Oktober 2026",kat:"Perekonomian",baca:64,tipe:"video",src:"Gelar Bazar UMKM Serentak di 64 Titik, Pemkot Jakarta Timur Raih Rekor MURI Bazar Terbanyak - Kota Jakarta Timur (1080p).mp4",poster:"UMKM.jpg",ringkas:"Pelaku UMKM lokal memamerkan produk di halaman kelurahan.",isi:"Gelar Bazar UMKM Serentak di 64 Titik, Pemkot Jakarta Timur Raih Rekor MURI Bazar Terbanyak - Kota Jakarta Timur berikut selengkapnya. https://youtu.be/USGPcTqEItc?si=Qmfc0gZ8Qt9bMM7r"}
+];
+var INFO=[{src:"Pelayanan.jpeg",cap:"Fungsi Pelayanan Kampung Gedong"},{src:"TugasFungsi.jpeg",cap:"Tugas dan Fungsi Kampung Gedong"},{src:"Info.jpeg",cap:"Permohonan Informasi Publik"}];
 
-$('#cvNames').innerHTML = names;
-$('#hNames').innerHTML = C.bride.nick+'<br>&amp; '+C.groom.nick;
-$('#hDate').textContent = tgl;
-if (C.hero) document.documentElement.style.setProperty('--hero','url('+C.hero+')');
-$('#qText').textContent = '“'+C.quote+'”'; $('#qSrc').textContent = C.quoteSrc;
-$('#intro').textContent = C.intro;
-$('#bigDate').textContent = hari;
-$('#venue').textContent = C.venue; $('#addr').textContent = C.address;
-$('#giftText').textContent = C.giftText;
-$('#clNames').textContent = C.bride.nick+' & '+C.groom.nick;
-$('#clText').textContent = C.closing;
-
-/* Nama tamu: dari kolom input atau dari tautan #Nama-Tamu */
-const hash = decodeURIComponent(location.hash.slice(1)).replace(/[-+_]/g,' ').trim();
-const gi = $('#guest'); if (hash) gi.value = hash;
-const setGuest = () => $('#gName').textContent = gi.value.trim() || 'Tamu Undangan';
-gi.addEventListener('input', setGuest); setGuest();
-
-/* Mempelai */
-const mk = (p,role,h) => `<div class="person rv"><div class="photo"><img src="${p.photo||ph(p.nick[0],h)}" alt="Foto ${p.nick}" loading="lazy"></div><div class="nm">${p.nick}</div><div class="full">${p.full}</div><div class="par">${p.parents}</div></div>`;
-$('#people').innerHTML = mk(C.bride,'bride',350)+'<div class="amp rv">&amp;</div>'+mk(C.groom,'groom',170);
-
-/* Acara */
-$('#events').innerHTML = C.events.map(e=>`<div class="ev rv"><h3>${e.title}</h3><p>${hari}</p><p>${e.time}</p></div>`).join('');
-const iso = d => d.toISOString().replace(/[-:]|\.\d{3}/g,'');
-$('#cal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Pernikahan '+C.bride.nick+' & '+C.groom.nick)+'&dates='+iso(D)+'/'+iso(new Date(D.getTime()+6*36e5))+'&location='+encodeURIComponent(C.venue+', '+C.address);
-
-/* Countdown */
-$('#cd').innerHTML = ['Hari','Jam','Menit','Detik'].map(l=>`<div><b>0</b><span>${l}</span></div>`).join('');
-const cb = document.querySelectorAll('#cd b');
-function tick(){
-  let s = Math.max(0, Math.floor((D-new Date())/1000));
-  const v = [Math.floor(s/86400), Math.floor(s%86400/3600), Math.floor(s%3600/60), s%60];
-  v.forEach((n,i)=>cb[i].textContent = String(n).padStart(2,'0'));
+function $(q){return document.querySelector(q)}
+var cat="Semua",all=false,LIM=6;
+function thumb(n){return n.tipe==="youtube"?"https://img.youtube.com/vi/"+n.src+"/hqdefault.jpg":(n.tipe==="video"?(n.poster||""):n.src)}
+function renderNews(){
+ var L=NEWS.filter(function(n){return cat==="Semua"||n.kat===cat});
+ var S=all?L:L.slice(0,LIM);
+ $("#newsList").innerHTML=S.map(function(n,i){var t=thumb(n);
+  return '<button class="nc" type="button" data-i="'+NEWS.indexOf(n)+'" style="--i:'+i+'"><div class="im">'+(t?'<img src="'+t+'" alt="" loading="lazy" onerror="this.remove()">':'')+(n.tipe!=="foto"?'<span class="play"><i></i></span>':'')+'<span class="pill">'+n.kat+'</span></div><div class="nb"><div class="meta">'+n.tgl+' &nbsp;&bull;&nbsp; '+n.baca+' dibaca</div><h3>'+n.judul+'</h3><p>'+n.ringkas+'</p></div></button>'}).join("")||'<p class="note">Belum ada berita di kategori ini.</p>';
+ var b=$("#showAll");b.hidden=L.length<=LIM;b.textContent=all?"Ringkas":"Tampilkan semua";
 }
-tick(); setInterval(tick,1000);
-
-/* Lokasi (Google Maps) */
-const q = encodeURIComponent(C.mapQuery);
-$('#mapFrame').src = 'https://maps.google.com/maps?q='+q+'&output=embed';
-$('#mapBtn').href = 'https://www.google.com/maps/search/?api=1&query='+q;
-
-/* Rekening */
-$('#accs').innerHTML = C.accounts.map((a,i)=>`<div class="acc rv"><div class="bank">${a.bank}</div><div class="no">${a.no}</div><div class="an">a.n. ${a.name}</div><button class="btn ghost" data-i="${i}">Salin nomor</button></div>`).join('');
-$('#accs').addEventListener('click',async e=>{
-  const b = e.target.closest('button'); if(!b) return;
-  const n = C.accounts[b.dataset.i].no;
-  try { await navigator.clipboard.writeText(n); }
-  catch(_) { const t=document.createElement('textarea'); t.value=n; document.body.appendChild(t); t.select(); try{document.execCommand('copy')}catch(_){} t.remove(); }
-  b.textContent='Nomor tersalin'; setTimeout(()=>b.textContent='Salin nomor',2000);
+function openModal(h){$("#mdBody").innerHTML=h;$("#md").showModal()}
+$("#md").addEventListener("close",function(){$("#mdBody").innerHTML=""});
+$("#md").addEventListener("click",function(e){if(e.target===this)this.close()});
+$("#newsList").addEventListener("click",function(e){
+ var b=e.target.closest(".nc");if(!b)return;var n=NEWS[+b.dataset.i],m;
+ if(n.tipe==="youtube")m='<div class="vid"><iframe src="https://www.youtube.com/embed/'+n.src+'" title="'+n.judul+'" allow="fullscreen" allowfullscreen></iframe></div>';
+ else if(n.tipe==="video")m='<video class="big" src="'+n.src+'" poster="'+(n.poster||"")+'" controls playsinline></video>';
+ else m='<img class="big" src="'+n.src+'" alt="'+n.judul+'">';
+ openModal(m+'<div class="mdb"><div class="meta">'+n.kat+' &nbsp;&bull;&nbsp; '+n.tgl+'</div><h3>'+n.judul+'</h3><p>'+n.isi+'</p></div>');
 });
+$("#newsTabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;
+ this.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x===b)});cat=b.dataset.c;all=false;renderNews()});
+$("#showAll").addEventListener("click",function(){all=!all;renderNews()});
+renderNews();
+$("#infoList").innerHTML=INFO.map(function(f,i){return '<button class="ig" type="button" data-i="'+i+'">Tambah infografis<img src="'+f.src+'" alt="'+f.cap+'" loading="lazy" onerror="this.remove()"><span>'+f.cap+'</span></button>'}).join("");
+$("#infoList").addEventListener("click",function(e){var b=e.target.closest(".ig");if(!b)return;var f=INFO[+b.dataset.i];openModal('<img class="big" src="'+f.src+'" alt="'+f.cap+'"><div class="mdb"><h3>'+f.cap+'</h3></div>')});
 
-/* Galeri */
-const hs=[20,350,170,200,300,40,120,260];
-$('#g').innerHTML = C.gallery.map((s,i)=>{
-  const tall = i%3===0;
-  return `<img class="rv" tabindex="0" src="${s||ph('♡',hs[i%8],400,tall?560:400)}" alt="Foto galeri ${i+1}" loading="lazy">`;
-}).join('');
-const lb=$('#lb');
-document.addEventListener('click',e=>{
-  if(e.target.matches('.g img')){ lb.querySelector('img').src=e.target.src; lb.classList.add('on'); }
-  else if(lb.classList.contains('on')) lb.classList.remove('on');
-});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') lb.classList.remove('on');
-  if(e.key==='Enter' && e.target.matches('.g img')) e.target.click();
-});
+$("#profilTabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;
+ this.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x===b)});
+ document.querySelectorAll(".pane").forEach(function(p){p.classList.toggle("on",p.id==="p-"+b.dataset.t)})});
 
-/* RSVP & Ucapan */
-const rs=$('#rsvpForm'), wl=$('#wishes'), rm=$('#rMsg'), rn=$('#rName');
-rn.value = gi.value; gi.addEventListener('input',()=>rn.value=gi.value);
-function addWish(w,top){
-  const d=document.createElement('div'); d.className='wish';
-  const b=document.createElement('b'); b.textContent=w.name;
-  const s=document.createElement('span'); s.textContent=w.status||'';
-  const p=document.createElement('p'); p.textContent=w.msg;
-  d.append(b,s,p); top?wl.prepend(d):wl.append(d);
+var calm=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+function count(el){var t=+el.dataset.count;if(!t)return;var st=null,suf=el.dataset.suf||"";
+ if(calm){el.textContent=t.toLocaleString("id-ID")+suf;return}
+ (function f(ts){st=st||ts;var p=Math.min((ts-st)/1400,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString("id-ID")+suf;if(p<1)requestAnimationFrame(f)})(performance.now())}
+if("IntersectionObserver" in window){
+ document.documentElement.classList.add("js");
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add("in");io.unobserve(e.target);if(e.target.classList.contains("num"))count(e.target)})},{threshold:.15});
+ [["section h2",0],["section .sub",0],[".tile",.06],[".stats div",.1],[".num",0],["#profil .card,.two > *",0],[".node",.1],["details",.08],["#pengaduan .card",0]].forEach(function(r){
+  document.querySelectorAll(r[0]).forEach(function(el,i){el.classList.add("rv");if(r[1])el.style.transitionDelay=(i%4*r[1])+"s";io.observe(el)})});
 }
-async function loadWishes(){
-  if(!C.sheetUrl) return;
-  try{ const a=await (await fetch(C.sheetUrl)).json(); wl.textContent=''; a.forEach(w=>w.msg&&addWish(w)); }catch(_){}
-}
-loadWishes();
-rs.addEventListener('submit',async e=>{
-  e.preventDefault();
-  const data={name:rn.value.trim(),status:$('#rStatus').value,count:$('#rCount').value,msg:$('#rText').value.trim()};
-  const btn=$('#rBtn'); btn.disabled=true; rm.textContent='Mengirim…';
-  try{
-    if(C.sheetUrl) await fetch(C.sheetUrl,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)});
-    if(data.msg) addWish(data,true);
-    rm.textContent = C.sheetUrl ? 'Terima kasih, konfirmasi Anda sudah kami terima.' : 'Mode contoh: data belum tersimpan karena RSVP belum dihubungkan.';
-    $('#rText').value='';
-  }catch(_){ rm.textContent='Gagal mengirim, silakan coba lagi.'; }
-  btn.disabled=false;
-});
 
-/* Musik SoundCloud */
-const sc=$('#sc'), mus=$('#mus'); let playing=false, userPaused=false;
-const cmd = (m,v) => { try{ sc.contentWindow.postMessage(JSON.stringify(v!==undefined?{method:m,value:v}:{method:m}),'*'); }catch(_){} };
-function setP(on){ playing=on; if(on) userPaused=false; mus.classList.toggle('spin',on); mus.style.opacity = on?1:.6; }
-window.addEventListener('message',e=>{
-  if(e.origin!=='https://w.soundcloud.com') return;
-  let d; try{ d = typeof e.data==='string' ? JSON.parse(e.data) : e.data; }catch(_){ return; }
-  if(!d) return;
-  if(d.method==='ready'){ ['play','pause','finish'].forEach(v=>cmd('addEventListener',v)); cmd('setVolume',80); if(!userPaused) cmd('play'); }
-  else if(d.method==='play') setP(true);
-  else if(d.method==='pause') setP(false);
-  else if(d.method==='finish'){ cmd('seekTo',0); cmd('play'); }
-});
-mus.addEventListener('click',()=>{ userPaused = playing; cmd(playing?'pause':'play'); setP(!playing); });
-/* Cadangan: jika browser menahan putar otomatis, sentuhan pertama akan memutar musik */
-['touchstart','click','scroll'].forEach(ev=>addEventListener(ev,()=>{ if(mus.style.display==='block' && !playing && !userPaused) cmd('play'); },{passive:true}));
-
-/* Buka undangan */
-$('#openBtn').addEventListener('click',()=>{
-  setGuest();
-  $('#cover').classList.add('open'); document.body.classList.remove('lock'); scrollTo(0,0);
-  mus.style.display='block';
-  sc.src='https://w.soundcloud.com/player/?url='+encodeURIComponent(C.soundcloud.split('?')[0])+'&auto_play=true&hide_related=true&visual=false';
-  [900,2200,4500].forEach(t=>setTimeout(()=>{ if(!playing && !userPaused) cmd('play'); },t));
-  setTimeout(()=>$('#cover').style.visibility='hidden',1100);
-});
-
-/* Animasi muncul saat scroll */
-const io = new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);} }),{threshold:.15});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* ---- pencarian ---- */
+var sr=document.getElementById("sr"),sq=document.getElementById("sq"),sres=document.getElementById("sres"),IDX=[];
+function gotoId(id){var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:"smooth",block:"start"})}
+function tx(el){return el.textContent.replace(/\s+/g," ").trim()}
+function buildIdx(){
+ var I=[];
+ document.querySelectorAll("#profil .pane").forEach(function(p){I.push({t:"Profil: "+tx(p.querySelector("h3")),x:tx(p),go:function(){var b=document.querySelector('#profilTabs [data-t="'+p.id.slice(2)+'"]');if(b)b.click();gotoId("profil")}})});
+ document.querySelectorAll("#layanan details").forEach(function(d){I.push({t:"Layanan: "+tx(d.querySelector("summary")),x:tx(d),go:function(){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}})});
+ NEWS.forEach(function(n,i){I.push({t:"Berita: "+n.judul,x:[n.judul,n.ringkas,n.isi,n.kat].join(" "),go:function(){cat="Semua";all=true;renderNews();document.querySelectorAll("#newsTabs .tab").forEach(function(x){x.classList.toggle("on",x.dataset.c==="Semua")});gotoId("berita");setTimeout(function(){var c=document.querySelector('.nc[data-i="'+i+'"]');if(c)c.click()},500)}})});
+ INFO.forEach(function(f){I.push({t:"Infografis: "+f.cap,x:f.cap,go:function(){gotoId("infografis")}})});
+ [["struktur","Struktur organisasi"],["peta","Peta lokasi"],["pengaduan","Pengaduan"],["kontak","Kontak dan nomor penting"]].forEach(function(a){var e=document.getElementById(a[0]);if(e)I.push({t:a[1],x:tx(e),go:function(){gotoId(a[0])}})});
+ return I}
+function doSearch(){
+ var q=sq.value.trim().toLowerCase();sres.textContent="";if(!q)return;
+ var ws=q.split(/\s+/);
+ var R=IDX.filter(function(e){var h=(e.t+" "+e.x).toLowerCase();return ws.every(function(w){return h.indexOf(w)>-1})}).slice(0,8);
+ if(!R.length){var p=document.createElement("p");p.className="note";p.textContent="Tidak ada hasil untuk \u201c"+sq.value.trim()+"\u201d.";sres.appendChild(p);return}
+ R.forEach(function(e){
+  var b=document.createElement("button");b.type="button";b.className="sri";
+  var t=document.createElement("b");t.textContent=e.t;
+  var s=document.createElement("span"),i=e.x.toLowerCase().indexOf(ws[0]),a=Math.max(0,i-40);
+  s.textContent=(a>0?"\u2026":"")+e.x.slice(a,a+120)+"\u2026";
+  b.appendChild(t);b.appendChild(s);
+  b.addEventListener("click",function(){sr.close();setTimeout(e.go,60)});
+  sres.appendChild(b)})}
+document.getElementById("srchBtn").addEventListener("click",function(){IDX=buildIdx();sq.value="";sres.textContent="";sr.showModal();sq.focus()});
+sq.addEventListener("input",doSearch);
+sq.addEventListener("keydown",function(e){if(e.key==="Enter"){var f=sres.querySelector(".sri");if(f)f.click()}});
+sr.addEventListener("click",function(e){if(e.target===sr)sr.close()});
 </script>
 </body>
 </html>
